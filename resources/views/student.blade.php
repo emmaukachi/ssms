@@ -11,10 +11,17 @@
     <title>Student Management System</title>
   </head>
   <body>
+    @include('navbar')
+
+    <div class="row header-container justify-content-center">
+    <div class="header">
+        <h1>Student Management System</h1>
+    </div>
+</div>
     
     @if($layout == 'index')
         
-        <div class="container-fluid">
+        <div class="container-fluid mt-4">
             <div class="row">
                 <section class="col-md-7">
                     @include("studentslist")
@@ -24,42 +31,51 @@
         </div>
 
     @elseif($layout == 'create')
-        <div class="container-fluid">
+        <div class="container-fluid mt-4">
             <div class="row">
                 <section class="col">
                     @include("studentslist")
                 </section>
                 <section class="col">
-                    <form action="{{ url('/store') }}" method="post">
-                        @csrf
-                        <div class="form-group">
-                            <label>CNE</label>
-                            <input name="cne" type="text" class="form-control" placeholder="Enter cne">
-                        </div>
-                        <div class="form-group">
-                            <label>First Name</label>
-                            <input name="firstName" type="text" class="form-control" placeholder="Enter the first name">
-                        </div>
-                        <div class="form-group">
-                            <label>Second Name</label>
-                            <input name="secondName" type="text" class="form-control" placeholder="Enter Second name">
-                        </div>
-                        <div class="form-group">
-                            <label>Age</label>
-                            <input name="age" type="text" class="form-control" placeholder="Enter Age">
-                        </div>
-                        <div class="form-group">
-                            <label>Speciality</label>
-                            <input name="specialty" type="text" class="form-control" placeholder="Enter Specialty">
-                        </div>
-                        <input type="submit" class="btn btn-info" value="Save">
-                        <input type="reset" class="btn btn-warning" value="Reset">
-                    </form>
+
+                    <div class="card mb-3">
+                        <img src="http://inventain.com/wp-content/uploads/2020/01/Children-And-Education-Are-Important-768x403.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Enter Information of the new student</h5>
+                                <form action="{{ url('/store') }}" method="post">
+                                    @csrf
+                                    <div class="form-group">
+                                        <label>CNE</label>
+                                        <input name="cne" type="text" class="form-control" placeholder="Enter cne">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>First Name</label>
+                                        <input name="firstName" type="text" class="form-control" placeholder="Enter the first name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Second Name</label>
+                                        <input name="secondName" type="text" class="form-control" placeholder="Enter Second name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Age</label>
+                                        <input name="age" type="text" class="form-control" placeholder="Enter Age">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Speciality</label>
+                                        <input name="specialty" type="text" class="form-control" placeholder="Enter Specialty">
+                                    </div>
+                                    <input type="submit" class="btn btn-info" value="Save">
+                                    <input type="reset" class="btn btn-warning" value="Reset">
+                                </form>
+                            </div>
+                    </div>
+
+                    
                 </section>
             </div>
         </div>
     @elseif($layout == 'show')
-    <div class="container-fluid">
+    <div class="container-fluid mt-4">
         <div class="row">
             <section class="col">
                 @include("studentslist")
@@ -68,13 +84,19 @@
         </div>
     </div>
     @elseif($layout == 'edit')
-        <div class="container-fluid">
+        <div class="container-fluid mt-4">
             <div class="row">
-            <section class="col">
+            <section class="col-md-7">
                 @include("studentslist")
             </section>
-            <section class="col">
-            <form action="{{ url('/update/'.$student->id) }}" method="post">
+            <section class="col-md-5">
+
+            <div class="card mb-3">
+                <img src="https://media.wsimag.com/attachments/7fa16d4e489e524267badc71bf916a5e68bec488/store/fill/1090/613/c1e83957fe71d36adeb4b070c1573135072a8b6331e18a2f5f7e163c769f/Venezuela-does-not-appear-in-the-Global-Teacher-Status.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                 <h5 class="card-title">Update informations of student</h5>
+                
+                 <form action="{{ url('/update/'.$student->id) }}" method="post">
                         @csrf
                         <div class="form-group">
                             <label>CNE</label>
@@ -98,7 +120,10 @@
                         </div>
                         <input type="submit" class="btn btn-info" value="update">
                         <input type="reset" class="btn btn-warning" value="Reset">
-                    </form>
+                </form>
+            
+                </div>
+            </div>
             </section>
             </div>
         </div>

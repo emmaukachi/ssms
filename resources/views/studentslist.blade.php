@@ -1,4 +1,10 @@
-<table class="table">
+<div class="card mb-3">
+  <img src="https://myanmar.gov.mm/image/journal/article?img_id=40677799&t=1581921852667" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">List of Students</h5>
+    <p class="card-text">You can find all informations about students in the system here.</p>
+
+   <table class="table">
   <thead class="thead-light">
     <tr>
       <th scope="col">CNE</th>
@@ -25,4 +31,8 @@
     </tr>
     @endforeach
   </tbody>
-</table>
+</table> 
+  </div>
+</div>
+
+
