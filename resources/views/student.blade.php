@@ -7,7 +7,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
     <title>Student Management System</title>
   </head>
   <body>
@@ -22,11 +22,13 @@
     @if($layout == 'index')
         
         <div class="container-fluid mt-4">
-            <div class="row">
+            <div class="container-fluid mt-4">
+            <div class="row justify-content-center">
                 <section class="col-md-7">
                     @include("studentslist")
                 </section>
-                <section class="col-md-5"></section>
+                
+            </div>
             </div>
         </div>
 
