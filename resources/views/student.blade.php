@@ -8,6 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    
     <title>Student Management System</title>
   </head>
   <body>
@@ -15,6 +16,7 @@
 
     <div class="row header-container justify-content-center">
     <div class="header">
+        <h1>Holy Hill Private School </h1>
         <h1>Student Management System</h1>
     </div>
 </div>
@@ -121,6 +123,7 @@
                             <input value="{{ $student->specialty }}" name="specialty" type="text" class="form-control" placeholder="Enter Specialty">
                         </div>
                         <input type="submit" class="btn btn-info" value="update">
+                      
                         <input type="reset" class="btn btn-warning" value="Reset">
                 </form>
             
